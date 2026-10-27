@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Meri Sona 💗</title>
+
+<style>
+:root {
+  --pink: #ff75a9;
+  --lavender: #b99aff;
+  --deep: #75436f;
+  --cream: #fff9fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--deep);
+  background: linear-gradient(
+    135deg, #ffe2ee, #f1e5ff, #fff0e2, #ffe6f2
+  );
+  background-size: 300% 300%;
+  animation: gradient 12s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+#hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -35px;
+  animation: rise linear forwards;
+  opacity: .8;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  width: min(92%, 570px);
+  margin: 25px auto;
+}
+
+.card {
+  padding: 30px 24px;
+  margin-bottom: 22px;
+  text-align: center;
+  border: 1px solid #ffffffc9;
+  border-radius: 28px;
+  background: #ffffffd9;
+  box-shadow: 0 15px 45px #a15b8320;
+  backdrop-filter: blur(10px);
+  animation: appear .7s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden {
+  display: none !important;
+}
+
+h1 {
+  color: #dc5799;
+  font-size: clamp(32px, 8vw, 45px);
+  margin: 14px 0;
+}
+
+h2 {
+  color: #9c65bf;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.small {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #a46d9c;
+}
+
+.emoji {
+  font-size: 55px;
+  margin: 12px;
+}
+
+button {
+  border: 0;
+  border-radius: 30px;
+  padding: 13px 23px;
+  margin: 8px 4px;
+  color: white;
+  background: linear-gradient(110deg, #ff76a9, #b28af7);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 7px 18px #c77bad35;
+  transition: transform .2s;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+button:focus-visible {
+  outline: 3px solid #75436f;
+  outline-offset: 3px;
+}
+
+.letter {
+  background: linear-gradient(145deg, #fff1f7, #f6efff);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: left;
+  margin: 18px 0;
+  border: 1px solid white;
+}
+
+.letter p {
+  margin: 10px 0;
+}
+
+.quote {
+  padding: 17px;
+  background: #fff0f7;
+  border-radius: 18px;
+  margin: 20px 0;
+}
+
+.big-heart {
+  font-size: 75px;
+  animation: heartbeat 1.4s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  50% { transform: scale(1.12); }
+}
+
+#hugMessage {
+  color: #d44c91;
+  font-weight: bold;
+  background: #fff0f8;
+  padding: 16px;
+  border-radius: 18px;
+}
+
+footer {
+  text-align: center;
+  font-size: 13px;
+  padding: 5px 10px 25px;
+  color: #94668e;
+}
+
+@media (max-width: 420px) {
+  .card { padding: 24px 16px; }
+  main { margin: 14px auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts" aria-hidden="true"></div>
+
+<main>
+
+  <!-- FIRST SCREEN -->
+  <section class="card" id="page1">
+
+    <p class="small">✦ A LITTLE SURPRISE, MADE WITH CARE ✦</p>
+
+    <div class="emoji">🎀💗🧸</div>
+
+    <h1>Meri Sona! 🌷</h1>
+
+    <p>
+      Hey you, yes YOU! 💕
+      <br>
+      Someone has made a tiny little corner
+      of the internet just for you.
+    </p>
+
+    <p>
+      Ready to open your little surprise? ✨
+    </p>
+
+    <button onclick="showPage(2)">
+      Open My Surprise 💌
+    </button>
+
+  </section>
+
+
+  <!-- SECOND SCREEN: LETTER -->
+  <section class="card hidden" id="page2">
+
+    <div class="emoji">💌</div>
+
+    <h2>A Little Letter For You</h2>
+
+    <p>Some words, especially for you, Meri Sona. 💗</p>
+
+    <div class="letter">
+
+      <p>Dear Meri Sona, 🌸</p>
+
+      <p>
+        I just wanted to remind you that you are
+        someone truly special to me.
+      </p>
+
+      <p>
+        There is something beautiful about the way
+        a simple conversation, a little smile, or
+        a random moment can make an ordinary day
+        feel a little brighter.
+      </p>
+
+      <p>
+        I hope life gives you a thousand little
+        reasons to smile, peaceful moments when
+        you need them, and happiness in places
+        you least expect.
+      </p>
+
+      <p>
+        Never forget that you deserve kindness,
+        respect, happiness, and all the lovely
+        things life has to offer. 🦋
+      </p>
+
+      <p>
+        And whenever you see this little page,
+        I hope it brings a smile to your face.
+      </p>
+
+      <p>
+        With lots of affection, 💗
+        <br>
+        <strong>Your Khajur ❤️</strong>
+      </p>
+
+    </div>
+
+    <button onclick="showPage(3)">
+      A Little More Magic ✨
+    </button>
+
+  </section>
+
+
+  <!-- THIRD SCREEN: SWEET MESSAGES -->
+  <section class="card hidden" id="page3">
+
+    <div class="emoji">🌷✨</div>
+
+    <h2>Three Little Reminders</h2>
+
+    <div class="quote">
+      💗 You are more wonderful than you realise.
+    </div>
+
+    <div class="quote">
+      🌸 Your smile deserves a thousand happy moments.
+    </div>
+
+    <div class="quote">
+      🦋 You deserve to feel appreciated, every day.
+    </div>
+
+    <p>
+      And here's one more thing...
+      <br>
+      You make the little moments feel special. 💕
+    </p>
+
+    <button onclick="showPage(4)">
+      Your Virtual Hug 🫂
+    </button>
+
+  </section>
+
+
+  <!-- FOURTH SCREEN: VIRTUAL HUG -->
+  <section class="card hidden" id="page4">
+
+    <div class="big-heart">💗</div>
+
+    <h2>A Warm Hug For You</h2>
+
+    <p>
+      Imagine a little cloud of pink hearts,
+      happy thoughts, and positive vibes
+      coming your way. ☁️💞
+    </p>
+
+    <button onclick="sendHug()">
+      Tap For A Hug 🤗
+    </button>
+
+    <p id="hugMessage" class="hidden" aria-live="polite">
+      🤗 Virtual hug delivered!
+      <br>
+      A little warmth, a little happiness,
+      and lots of lovely wishes for you. 💗
+    </p>
+
+    <button onclick="showPage(5)">
+      One Final Surprise 🎁
+    </button>
+
+  </section>
+
+
+  <!-- FINAL SCREEN -->
+  <section class="card hidden" id="page5">
+
+    <div class="emoji">🌙💖🌷</div>
+
+    <h1>For You, Meri Sona</h1>
+
+    <p>
+      Not every sweet moment needs a special occasion.
+      Sometimes, it's nice to remind someone
+      that they matter.
+    </p>
+
+    <div class="quote">
+      <p>
+        So keep smiling, keep shining,
+        and keep being wonderfully you. ✨
+      </p>
+    </div>
+
+    <div class="emoji">💌🧸💗</div>
+
+    <p>
+      Made with care and a little bit of magic,
+      <br>
+      <strong>Your Khajur ❤️</strong>
+    </p>
+
+    <button onclick="restart()">
+      Read It Again 💕
+    </button>
+
+  </section>
+
+  <footer>
+    A little pastel universe, just for you 🌸
+    <br>
+    With love and good wishes — Your Khajur
+  </footer>
+
+</main>
+
+<script>
+let currentPage = 1;
+
+function showPage(number) {
+  document.getElementById("page" + currentPage)
+    .classList.add("hidden");
+
+  currentPage = number;
+
+  document.getElementById("page" + currentPage)
+    .classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  burstHearts(18);
+}
+
+function sendHug() {
+  document.getElementById("hugMessage")
+    .classList.remove("hidden");
+
+  burstHearts(30);
+}
+
+function restart() {
+  document.getElementById("page" + currentPage)
+    .classList.add("hidden");
+
+  currentPage = 1;
+
+  document.getElementById("page1")
+    .classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  burstHearts(20);
+}
+
+function createHeart() {
+  const container = document.getElementById("hearts");
+  const heart = document.createElement("span");
+  const symbols = ["💗", "💕", "💖", "♡", "🌸", "✨"];
+
+  heart.className = "heart";
+  heart.textContent =
+    symbols[Math.floor(Math.random() * symbols.length)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (14 + Math.random() * 18) + "px";
+  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+  container.appendChild(heart);
+
+  heart.addEventListener("animationend", () => heart.remove());
+}
+
+function burstHearts(count) {
+  for (let i = 0; i < count; i++) {
+    setTimeout(createHeart, i * 70);
+  }
+}
+
+setInterval(createHeart, 850);
+</script>
+
+</body>
+</html>
